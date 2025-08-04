@@ -1,0 +1,6 @@
+<figure>
+    <img src="{{ src | safe }}" alt="{{ alt | default(value="") }}">
+    {% if body %}
+    <figcaption>{{ body | safe }}</figcaption>
+    {% endif %}
+</figure>

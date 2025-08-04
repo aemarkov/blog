@@ -1,0 +1,42 @@
+@import "_reset";
+@import "_settings";
+@import "_fonts";
+@import "_typography";
+@import "_nav";
+@import "_posts";
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-font-color);
+}
+
+.container {
+    width: 100%;
+    max-width: $line-length;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+// Images
+img, picture {
+    max-width: 100%;
+    max-height: 50rem;
+    display: block;
+}
+
+figure {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin: $paragraph-spacing 0;
+}
+
+figcaption {
+    @include pt-sans-regular;
+    color: var(--secondary-font-color);
+    text-align: center;
+    margin-top: $intra-spacing;
+}

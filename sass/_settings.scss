@@ -1,0 +1,31 @@
+// 4px grid
+// Assume rem = 16px
+$space-4:  0.25rem;      // 4px
+$space-8:  $space-4 * 2; // 8px
+$space-12: $space-4 * 3; // 12px
+$space-16: $space-4 * 4; // 16px
+$space-20: $space-4 * 5; // 20px
+$space-24: $space-4 * 6; // 24px
+$space-28: $space-4 * 7; // 28px
+$space-32: $space-4 * 8; // 32px
+
+// Typography
+// I'm noob so I use guides from https://www.learnui.design/tools/typography-tutorial.html
+
+$body-font-size:    1.125rem;
+$line-height:       1.5rem;
+$line-length:       45rem;
+$paragraph-spacing: $space-16;    // spacing between paragraphs
+$inter-spacing:     $space-24;    // spacing between groups of elements
+$intra-spacing:     $space-8;     // spacing between elements within a group
+
+
+// Colors
+:root {
+    //--background-color: #fefdf9;
+    --background-color: #fff;
+    --primary-font-color: #232323;
+    --secondary-font-color: #555;
+    --menu-color: #f4f3ef;
+    --menu-hover-color: #eae9e5;
+}
