@@ -1,0 +1,54 @@
+.about-title {
+    width: 100%;
+    text-align: center;
+}
+
+.about {
+    width: 100%;
+    margin: $space-24 0;
+}
+
+.about-hz {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space-16;
+}
+
+.about img {
+    --size: 150px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: calc(var(--size) / 2);
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.about-text {
+    flex: 1;
+    min-height: 100%;
+}
+
+.skills {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-top: $space-16;
+}
+
+.skills ul {
+    margin-top: $space-4;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    gap: $space-4;
+    flex-wrap: wrap;
+}
+
+.contacts img {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+}
