@@ -1,9 +1,9 @@
 +++
-weight = 0
+weight = 1
 [extra]
-position = "Embedded Software Engineer"
-company = "Volgograd State Technical University"
-company_icon = "vstu.jpg"
+title = "Embedded Software Engineer"
+details = "Volgograd State Technical University"
+org_icon = "vstu.jpg"
 from = "Mar 2017"
 to = "Dec 2017"
 duration = "10 mos"

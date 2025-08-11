@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% import "macros/about.html" as about %}
+
 {% block content %}
 <div class="about-page">
     <h1 class="about-title">Марков Алексей</h1>
@@ -28,23 +30,11 @@
 
     <h2>Опыт работы</h2>
     {% set experience = get_section(path="experience/_index.md") %}
-    {% for item in experience.pages | reverse %}
-        <article class="about-item">
-            {% if item.extra.company_icon %}
-                <img class="about-item-logo" src="/companies/{{ item.extra.company_icon }}"/>
-            {% endif %}
-            <div class="about-item-content">
-                <div class="about-item-position">{{ item.extra.position | default(value=item.title) }}</div>
-                <div class="about-item-org">{{ item.extra.company }}</div>
-                <div class="about-item-period">
-                    {% if item.extra.from %}{{ item.extra.from }}{% endif %}
-                    {% if item.extra.to %} - {{ item.extra.to }}{% endif %}
-                    {% if item.extra.duration %} · {{ item.extra.duration }}{% endif %}
-                </div>
-                <div class="about-item-description">{{ item.content | safe }}</div>
-            </div>
-        </article>
-    {% endfor %}
+    {{ about::list(list=experience) }}
+
+    <h2>Образование</h2>
+    {% set education = get_section(path="education/_index.md") %}
+    {{ about::list(list=education) }}
 </div>
 
 {% endblock content %}
