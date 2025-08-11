@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Все {{ taxonomy.name | lower }}</h1>
+<ul>
+    {% for term in terms %}
+        <li>
+            <a href="{{ term.permalink | safe }}">{{ term.name }}</a>
+            <span>({{ term.page_count }})</span>
+        </li>
+    {% endfor %}
+    {% if terms | length == 0 %}
+        <li>Нет терминов</li>
+    {% endif %}
+</ul>
+{% endblock content %}

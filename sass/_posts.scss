@@ -9,6 +9,7 @@
 
 // Post meta
 .post-meta {
+    @include pt-sans-regular;
     font-size: 0.85rem;
     color: var(--secondary-font-color);
     margin-top: $intra-spacing;

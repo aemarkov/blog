@@ -1,28 +1,11 @@
 {% extends "base.html" %}
 
+{% import "macros/post.html" as post %}
+
 {% block content %}
 <div class="posts">
-  {% for page in section.pages %}
-    <article class="post-item">
-      <h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
-      <div class="post-meta">
-        <span class="date">{{ page.date }}</span>
-        <span class="tags">
-          <a href="">Ретроспектива</a>
-          <a href="">Роботы</a>
-          <a href="">Хуй</a>
-        </span>
-      </div>
-
-      {% if page.extra.cover %}
-        <img src="{{ page.extra.cover | safe }}"/>
-      {% endif %}
-
-      {% if page.description %}
-        <p>{{ page.description | safe }}</p>
-      {% endif %}
-
-    </article>
+  {% for post in section.pages %}
+    {{ post::post(post=post) }}
   {% endfor %}
 </div>
 {% endblock content %}

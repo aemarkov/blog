@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% import "macros/post.html" as post %}
+
+{% block content %}
+<h1>Статьи по тегу: {{ term.name }}</h1>
+
+{% if term.pages | length > 0 %}
+    <div class="posts">
+        {% for post in term.pages %}
+        {{ post::post(post=post) }}
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Нет записей</p>
+{% endif %}
+{% endblock content %}

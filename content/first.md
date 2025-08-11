@@ -2,6 +2,8 @@
 title = "Как я делал ебучих роботов"
 description = "Рассказ о том, как я в универе занимался антропоморфными ходячими роботами, ездил в Сколково и творил дичь"
 date = 2019-11-27
+[taxonomies]
+tags = ["роботы", "универ", "ретроспектива"]
 +++
 
 {% figure(src="https://plus.unsplash.com/premium_photo-1753538456367-172c92e7558f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") %}
