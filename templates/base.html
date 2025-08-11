@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ config.title }}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ get_url(path='style.css') | safe }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ get_url(path='style.css') | safe }}">
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <nav class="navbar">
-        <a href="{{ config.base_url }}">Главная</a>
-        <a href="{{ config.base_url }}/about">Обо мне</a>
-      </nav>
-    </header>
-    {% block content %} {% endblock content %}
-    <footer>
-    </footer>
-  </div>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <a href="{{ config.base_url }}">Главная</a>
+                <a href="{{ config.base_url }}/about">Обо мне</a>
+            </nav>
+        </header>
+        {% block content %} {% endblock content %}
+        <footer>
+        </footer>
+    </div>
 </body>
+
 </html>

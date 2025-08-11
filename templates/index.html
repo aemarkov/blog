@@ -4,8 +4,8 @@
 
 {% block content %}
 <div class="posts">
-  {% for post in section.pages %}
-    {{ post::post(post=post) }}
-  {% endfor %}
+    {% for post in section.pages %}
+        {{ post::post(post=post) }}
+    {% endfor %}
 </div>
 {% endblock content %}

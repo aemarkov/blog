@@ -4,8 +4,8 @@
 
 {% block content %}
 <article class="post">
-  <h1>{{ page.title }}</h1>
-  {{ post::post_meta(post=page) }}
-  {{ page.content | safe }}
+    <h1>{{ page.title }}</h1>
+    {{ post::post_meta(post=page) }}
+    {{ page.content | safe }}
 </article>
 {% endblock content %}
