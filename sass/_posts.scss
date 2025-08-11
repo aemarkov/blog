@@ -1,7 +1,6 @@
 // Post item in post list
-
 .post-item {
-    margin: $inter-spacing 0;
+    margin: $space-28 0;
 }
 
 .post-item h2 a {
@@ -10,17 +9,26 @@
 
 // Post meta
 .post-meta {
-    @include pt-sans-regular;
     font-size: 0.85rem;
     color: var(--secondary-font-color);
     margin-top: $intra-spacing;
     margin-bottom: $inter-spacing;
 }
 
+.tags {
+    margin-left: $space-16;
+}
+
 .tags a {
-    background-color: #bb9eff;
-    color: #fff;
+    background-color: #ffe9d2;
+    border: 1px solid #ffd9b3;
+    color: var(--secondary-font-color);
     text-decoration: none;
     border-radius: 0.25rem;
     padding: 0.1rem 0.2rem;
+}
+
+// Post page
+.post {
+    @include pt-serif-regular;
 }

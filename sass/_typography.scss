@@ -1,7 +1,7 @@
 @import "_fonts";
 
 body {
-    @include pt-serif-regular;
+    @include pt-sans-regular;
     font-size: $body-font-size;
     line-height: $line-height;
 }

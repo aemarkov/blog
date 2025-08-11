@@ -2,7 +2,6 @@ header {
 }
 
 .navbar  {
-    @include pt-sans-regular;
     display: flex;
     gap: 0;
     background-color: var(--menu-color);
