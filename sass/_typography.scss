@@ -2,16 +2,16 @@
 
 body {
     @include pt-sans-regular;
-    font-size: $body-font-size;
-    line-height: $line-height;
+    font-size: var(--body-font-size);
+    line-height: var(--line-height);
 }
 
 p {
-    margin: $paragraph-spacing 0;
+    margin: var(--paragraph-spacing) 0;
 }
 
 img, picture {
-    margin: $paragraph-spacing auto 0 auto;
+    margin: var(--paragraph-spacing) auto 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,20 +19,19 @@ h1, h2, h3, h4, h5, h6 {
     // Set margin-bottom to 0 to configure smaller margin between headers
     // Margin between header and paragraphs (or whatever else) should be
     // configured separately. This is the only way I figured out.
-    margin: $inter-spacing 0 0 0;
+    margin: var(--inter-spacing) 0 0 0;
 }
 
-// Just capture values I see in browser and convert to rem
 h1 {
-    font-size: 2.25rem;
+    font-size: var(--h1-size);
 }
 
 h2 {
-    font-size: 1.7rem;
+    font-size: var(--h2-size);
 }
 
 h3 {
-    font-size: 1.3rem;
+    font-size: var(--h3-size);
 }
 
 // Lower spacing between headers
@@ -40,5 +39,5 @@ h2 + h3,
 h3 + h4,
 h4 + h5,
 h5 + h6 {
-    margin-top: $intra-spacing;
+    margin-top: var(--intra-spacing);
 }

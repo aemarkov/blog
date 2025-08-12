@@ -24,6 +24,24 @@
     flex-shrink: 0;
 }
 
+@media (max-width: $line-length) {
+    .about-hz {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about img {
+        display: block;
+        --size: 120px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+}
+
 .about-text {
     flex: 1;
     min-height: 100%;
@@ -67,6 +85,12 @@
     object-fit: cover;
     flex-shrink: 0;
     margin-top: 0;
+}
+
+@media (max-width: $line-length) {
+    .about-item-logo {
+        display: none;
+    }
 }
 
 .about-item-content {

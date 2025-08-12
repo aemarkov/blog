@@ -12,8 +12,8 @@
     @include pt-sans-regular;
     font-size: 0.85rem;
     color: var(--secondary-font-color);
-    margin-top: $intra-spacing;
-    margin-bottom: $inter-spacing;
+    margin-top: var(--intra-spacing);
+    margin-bottom: var(--inter-spacing);
 }
 
 .tags {

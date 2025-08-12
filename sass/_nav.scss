@@ -1,4 +1,11 @@
 header {
+    padding: 0 1rem 0 1rem;
+}
+
+@media (max-width: $line-length) {
+    header {
+        padding: 0;
+    }
 }
 
 .navbar  {

@@ -1,5 +1,10 @@
 <figure>
-    <img src="{{ src | safe }}" alt="{{ alt | default(value="") }}">
+    <img
+        src="{{ src | safe }}"
+        alt="{{ alt | default(value="") }}"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer">
     {% if body %}
     <figcaption>{{ body | safe }}</figcaption>
     {% endif %}
