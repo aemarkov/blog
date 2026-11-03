@@ -1,0 +1,16 @@
++++
+weight = 5
+[extra]
+title = "Senior Software Engineer"
+details = "Flant"
+org_icon = "flant.jpg"
+from = "May 2025"
+to = "Present"
+duration = ""
++++
+
+- Участвую в разработке Deckhouse — Kubernetes платформы от Flant; работаю над компонентами хранения данных, включая интеграцию с DRBD.
+- Анализировал исходный код ядра DRBD и выявлял утечки памяти
+- Разработал компонент экспорта файлов из Persistent Volume Claims (PVC) Kubernetes
+
+Технологии: Go, Kubernetes, DRBD, системы хранения, фаззинг, отладка ядра.

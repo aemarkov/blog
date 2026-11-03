@@ -9,11 +9,11 @@ to = "Apr 2025"
 duration = "3 yrs 8 mos"
 +++
 
-- Участвовал в разработке KasperskyOS — защищённой микроядерной ОС, разработанной с нуля; работал в команде ядра и драйверов устройств.
-- Рефакторинг подсистемы прерываний ядра: заменил динамическое создание уровней прерываний на статическую инициализацию через специальный секционный механизм, устранив гонки при загрузке.
-- Перевёл драйверы блочных устройств на секционный способ инициализации, обеспечив корректный запуск всех драйверов; подход позднее был обобщён командой.
-- Переработал архитектуру драйверов GPIO, устранив системные утечки ресурсов; рефакторинг принят как стандарт и шаблон.
-- Реализовал слой портирования драйверов часов на базе Linux-совместимости с использованием механизма межпроцессного взаимодействия (IPC).
-- Улучшил систему сборки для упрощения разработки новых драйверов внутри команды и для независимой разработки внешними заказчиками и подрядчиками, снизив зависимость от устаревших костылей.
+- Contributed to KasperskyOS — a secure microkernel-based operating system developed from scratch; worked in the kernel and device driver team.
+- Refactored kernel interrupt subsystem: eliminating race conditions during boot.
+- Refactored block device drivers to ensure proper startup of all linked drivers; approach later generalized by the team.
+- Redesigned GPIO driver architecture to eliminate systemic resource leaks; proposed and implemented new architectural design for all drivers classes
+- Implemented Linux compatibility porting layer for clock drivers using inter-process communication (IPC) mechanism.
+- Improved build system to simplify new driver implementation for internal teams and enable independent development by external customers and vendors
 
-Технологии: C, встроенные системы, микроядерные ОС, драйверы устройств, Linux-совместимость, разработка ядра, отладка, системы сборки.
+Technologies: C, Embedded Systems, Microkernel OS, Device Drivers, Kernel Development, Debugging, Build Systems

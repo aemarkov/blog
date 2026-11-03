@@ -9,10 +9,10 @@ to = "Dec 2017"
 duration = "10 mos"
 +++
 
-- Разработал прошивку для встроенной системы на STM32, управляющей клапанами давления для системы накачки/спуска шин в реальном времени.
-- Спроектировал архитектуру системы, протоколы связи и логику управления для обеспечения работы в реальном времени.
-- Создал десктопное приложение на C#/.NET WinForms для отладки, мониторинга и настройки системы.
-- Руководил небольшой студенческой командой: обеспечивал техническое руководство, проводил код-ревью и контролировал интеграцию.
-- Провёл испытания и ввод системы в эксплуатацию на площадке заказчика с успешной демонстрацией.
+- Designed and implemented firmware for an STM32-based embedded system controlling pressure valves for real-time tire inflation/deflation.
+- Developed system architecture, communication protocols, and control logic for real-time operation.
+- Built a C#/.NET WinForms desktop application for system debugging, monitoring, and configuration.
+- Led a small student team: provided technical guidance, performed code reviews, and oversaw integration.
+- Conducted on-site testing and 1 at the customer facility, achieving successful system demonstration.
 
-Технологии: C, Embedded C, STM32, системы реального времени, Visual Studio, C#, WinForms, UART, CAN, многопоточность, unit-тесты, отладка
+Technologies: C, Embedded C, STM32, Real-Time Systems, C#, WinForms, UART, CAN, Multithreading, Unit Testing, Debugging.

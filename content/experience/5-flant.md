@@ -9,8 +9,8 @@ to = "Present"
 duration = ""
 +++
 
-- Участвую в разработке Deckhouse — Kubernetes платформы от Flant; работаю над компонентами хранения данных, включая интеграцию с DRBD.
-- Анализировал исходный код ядра DRBD и выявлял утечки памяти; предоставил анализ корня проблемы, что позволило поддерживающим командам оперативно устранить баги.
-- Разработал сервис на Go для шаринга файлов из Persistent Volume Claims (PVC), покрытый модульными и фаззинг-тестами для прохождения госсертификации.
+- Contributed to Deckhouse — a Kubernetes platform by Flant; working on storage components including integration with DRBD
+- Investigated and analyzed DRBD kernel source code and memory leak issues
+- Developed a Go-based file backup/export service for Persistent Volume Claims (PVC) with comprehensive unit and fuzz testing
 
-Технологии: Go, Kubernetes, DRBD, системы хранения, фаззинг, отладка ядра.
+Technologies: Go, Kubernetes, DRBD, Storage,  Fuzz Testing, Kernel Debugging

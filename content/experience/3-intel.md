@@ -9,12 +9,12 @@ to = "Aug 2021"
 duration = "2 yrs 7 mos"
 +++
 
-- Разрабатывал компоненты Intel Time Coordinated Computing Tools — SDK для поддержки аппаратных функций под реальные и низкозадержанные промышленные приложения на Linux.
-- Спроектировал и реализовал Cache Allocation Library — malloc-подобную библиотеку для выделения памяти, закреплённой в кэшах L2/L3 с использованием Cache Allocation Technology (CAT); обеспечил высокое покрытие unit-тестами до появления железа, что позволило быстро запустить на dev-board.
-- Создал Cache Configurator — TUI-инструмент на Python для конфигурации разбиения кэша и генерации BIOS капсул, используемый Cache Allocation Library.
-- Разработал RT Readiness Checker — инструмент на Python и C для проверки настроек BIOS и ОС на пригодность для реального времени (C-states, Hyper-Threading и др.).
-- Наставлял стажёров и младших разработчиков по Cache Configurator и RT Readiness Checker; курировал студентческий проект в рамках Intel Summer Internship.
-- Внедрил использование Python type hints в команде, уменьшив число ошибок; провёл внутреннее обучение.
-- Разрабатывал и тестировал низкоуровневые аппаратные демо для TSN и Time Aware GPIO (TGPIO), выявлял проблемы в драйверах ядра и предлагал исправления.
+- Developed components of Intel Time Coordinated Computing Tools — SDK enabling hardware features for real-time and low-latency industrial applications on Linux.
+- Designed and implemented Cache Allocation Library — a malloc-like library for allocating memory pinned in L2/L3 cache using Cache Allocation Technology (CAT); achieved high unit test coverage prior to hardware availability, enabling near-immediate bring-up on dev boards.
+- Created Cache Configurator — Python TUI tool for cache partitioning and BIOS capsule generation, used by the Cache Allocation Library.
+- Developed RT Readiness Checker — Python and C tool to validate BIOS and OS settings for real-time operation (C-states, Hyper-Threading, etc.).
+- Mentored interns and junior developers on Cache Configurator and RT Readiness Checker; supervised student project during Intel Summer Internship program.
+- Promoted adoption of Python type hints across the team, reducing defects; delivered internal training session on the topic.
+- Built and validated low-level hardware samples for TSN and Time Aware GPIO (TGPIO), identifying kernel driver issues and proposing fixes.
 
-Технологии: C, Python, системы реального времени, низкоуровневое программирование, Linux, Embedded Linux, многопоточность, unit-тестирование, TSN, PTP,  конфигурация BIOS, отладка, CLI-инструменты, TUI, PID-регулятор.
+Technologies: C, Python, Real-Time Systems, Low-Level Programming, Linux, Embedded Linux, Multithreading, Unit Testing, TSN, PTP,  Firmware Update, BIOS Configuration, Debugging, PID Control

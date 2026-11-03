@@ -9,9 +9,9 @@ to = "Aug 2018"
 duration = "2 mos"
 +++
 
-- Разработал аппаратный стенд для демонстрации возможностей процессоров Intel в задачах реального времени
-- Создал пользовательский POV-дисплей на базе встраиваемой платформы Intel Atom для управления светодиодами.
-- Написал низкоуровневый C-код для точного тайминга, настройки привязки к ядрам CPU и планирования задач реального времени.
-- Выполнил настройку системы для демонстрации различий в производительности при разной многопоточности и загрузке CPU.
+- Created a demonstration system showcasing Intel processor capabilities for real-time systems.
+- Built a custom Persistence of Vision (POV) display using an Intel Atom–based embedded platform as a demonstration
+- Developed low-level C code for precise timing, CPU core affinity tuning, and real-time task scheduling.
+- Performed system tuning to illustrate performance differences under varying multithreading and CPU load scenarios.
 
-Технологии: C, встроенные системы, системы реального времени, многопоточность, низкоуровневое программирование, Linux, отладка
+Technologies: C, Embedded Systems, Real-Time Systems,  Multithreading, Low-Level Programming, Linux
