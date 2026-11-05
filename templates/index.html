@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 
-{% import "macros/post.html" as post %}
 
 {% block content %}
 <div class="posts">
     {% for post in section.pages %}
-        {{ post::post(post=post) }}
+        {{<post_item post={post}/>}}
     {% endfor %}
 </div>
 {% endblock content %}

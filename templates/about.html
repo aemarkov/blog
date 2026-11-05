@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-{% import "macros/about.html" as about %}
 
 {% block content %}
 <div class="about-page">
@@ -31,11 +30,11 @@
 
     <h2>Опыт работы</h2>
     {% set experience = get_section(path="experience/_index.md") %}
-    {{ about::list(list=experience) }}
+    {{<about_list list={experience}/>}}
 
     <h2>Образование</h2>
     {% set education = get_section(path="education/_index.md") %}
-    {{ about::list(list=education) }}
+    {{<about_list list={education}/>}}
 </div>
 
 {% endblock content %}
