@@ -1,17 +1,42 @@
 @use "../abstracts/breakpoints" as bp;
 
 .site-header {
+    --header-height: 76px;
+    // Own stacking context so the decoration's negative z-index stays inside the header.
+    position: relative;
+    isolation: isolate;
     border-bottom: var(--hairline) solid var(--rule);
+
+    @include bp.mobile {
+        --header-height: 64px;
+    }
 
     &__inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: var(--space-5);
-        height: 76px;
+        height: var(--header-height);
+    }
+
+    // Circuit traces ending just left of the nav. Out of flow and behind the header
+    // content; taller than the header, so it spills below the divider without
+    // moving anything. Tune `height` so the chip sits on the border-bottom.
+    &__decoration {
+        position: absolute;
+        z-index: -1;
+        // The nav is vertically centred in the bar, so this puts the top at the header's top edge.
+        top: 50%;
+        right: 100%;
+        margin-top: calc(var(--header-height) / -2);
+        height: 117px; // hard-coded to visual adjust part of the image with border-bottom of header
+        width: auto;
+        max-width: none;
+        pointer-events: none;
+        user-select: none;
 
         @include bp.mobile {
-            height: 64px;
+            display: none;
         }
     }
 }
@@ -73,6 +98,7 @@
 
 // Nav links fill the bar so the active underline sits on the divider.
 .site-nav {
+    position: relative;
     display: flex;
     flex: none;
     gap: var(--space-5);

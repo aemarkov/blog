@@ -52,4 +52,10 @@
             flex: none;
         }
     }
+
+    &__decoration {
+        @include bp.mobile {
+            display: none;
+        }
+    }
 }
