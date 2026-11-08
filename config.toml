@@ -3,7 +3,7 @@ base_url = "https://aemarkov.me"
 
 title = "Записки охотника за сегфолтами"
 description = "Заметки о программировании, инженерии и не только"
-default_language = "en"
+default_language = "ru"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -57,10 +57,9 @@ icon = "/icons/mail.svg"
 [slugify]
 taxonomies = "off"
 
-[languages.ru]
+[languages.en]
 taxonomies = [
     { name = "tags", feed = false }
 ]
 
-[languages.ru.translations]
 [translations]

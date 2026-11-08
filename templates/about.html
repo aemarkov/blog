@@ -24,13 +24,14 @@
 
 <section class="about-section">
     <h2 class="label about-section__label">Опыт</h2>
-    {% set experience = get_section(path="experience/_index.md", lang=lang) %}
+    {% set suffix = "" if lang == config.default_language else "." ~ lang %}
+    {% set experience = get_section(path="experience/_index" ~ suffix ~ ".md", lang=lang) %}
     {{<job_list list={experience}/>}}
 </section>
 
 <section class="about-section">
     <h2 class="label about-section__label">Образование</h2>
-    {% set education = get_section(path="education/_index.md", lang=lang) %}
+    {% set education = get_section(path="education/_index" ~ suffix ~ ".md", lang=lang) %}
     {{<job_list list={education}/>}}
 </section>
 {% endblock content %}
