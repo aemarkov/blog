@@ -33,26 +33,26 @@ author = "Алексей Марков"
 label = "GitHub"
 handle = "github.com/aemarkov"
 href = "https://github.com/aemarkov"
-icon = "/icons/icons8-github-32.png"
-footer = true
+icon = "/icons/github.svg"
 
 [[extra.contacts]]
 label = "LinkedIn"
 handle = "in/markov-alexey"
 href = "https://www.linkedin.com/in/markov-alexey/"
-icon = "/icons/icons8-linkedin-32.png"
+icon = "/icons/linkedin.svg"
 
 [[extra.contacts]]
 label = "Telegram"
 handle = "@markovalex95"
 href = "https://t.me/markovalex95"
-icon = "/icons/icons8-telegram-32.png"
+icon = "/icons/telegram.svg"
 footer = true
 
 [[extra.contacts]]
 label = "Почта"
 handle = "markovalex95@gmail.com"
 href = "mailto:markovalex95@gmail.com"
+icon = "/icons/mail.svg"
 
 [slugify]
 taxonomies = "off"

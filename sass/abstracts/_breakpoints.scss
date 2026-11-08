@@ -1,8 +1,16 @@
-// Single breakpoint: everything below it uses the phone layout.
+// Main breakpoint: everything below it uses the phone layout.
 $mobile: 880px;
+// Small phones: only for squeezing the header.
+$narrow: 400px;
 
 @mixin mobile {
     @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin narrow {
+    @media (max-width: $narrow) {
         @content;
     }
 }

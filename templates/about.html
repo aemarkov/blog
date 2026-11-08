@@ -4,13 +4,13 @@
 
 {% block content %}
 <section class="profile">
-    <img class="profile__photo" src="/avatar.jpg" alt="{{ config.extra.author }}" width="136" height="136">
     <div>
         <h1 class="profile__name">{{ config.extra.author }}</h1>
         <p class="profile__role">{{ section.extra.role }}</p>
         <p class="profile__summary">{{ section.extra.summary }}</p>
         {{<contact_list links={config.extra.contacts}/>}}
     </div>
+    <img class="profile__photo" src="/avatar.jpg" alt="{{ config.extra.author }}" width="136" height="136">
 </section>
 
 {% if section.extra.skills %}

@@ -14,7 +14,7 @@
         </a>
         <nav class="site-nav" aria-label="Основное меню">
             <img class="site-header__decoration" src="/header-decoration.svg" alt="" aria-hidden="true">
-            <a class="site-nav__link" href="{{ prefix }}/"
+            <a class="site-nav__link site-nav__link--feed" href="{{ prefix }}/"
                 {% if not on_about %}aria-current="page"{% endif %}>Статьи</a>
             <a class="site-nav__link" href="{{ prefix }}/about/"
                 {% if on_about %}aria-current="page"{% endif %}>Обо мне</a>

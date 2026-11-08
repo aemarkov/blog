@@ -41,6 +41,7 @@
     --toc-width: 216px;
     --toc-gap: 56px;
     --sidebar-width: 240px;
+    --main-width: calc(var(--page-width) - var(--sidebar-width) - var(--toc-gap)); // main column of the home/article grid
     --gutter: 24px;
     --content-top: 48px; // first content starts this far below the header on every page
 

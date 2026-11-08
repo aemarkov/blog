@@ -2,14 +2,14 @@
 
 .profile {
     display: grid;
-    grid-template-columns: 136px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 136px;
     gap: var(--space-5);
     align-items: start;
     padding: var(--content-top) 0 var(--space-6);
     border-bottom: var(--hairline) solid var(--rule);
 
     @include bp.mobile {
-        grid-template-columns: 88px minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) 88px;
         gap: var(--space-4);
     }
 
@@ -57,22 +57,17 @@
     }
 }
 
-// Section = label column + content column
+// Section = label stacked above the content, both flush with the left edge
 .about-section {
-    display: grid;
-    grid-template-columns: var(--toc-width) minmax(0, 1fr);
-    gap: var(--toc-gap);
     padding: var(--space-6) 0;
     border-bottom: var(--hairline) solid var(--rule);
 
-    @include bp.mobile {
-        grid-template-columns: minmax(0, 1fr);
-        gap: var(--space-4);
+    > * {
+        max-width: var(--main-width);
     }
 
     &__label {
-        margin: 0;
-        padding-top: 4px;
+        margin: 0 0 var(--space-4);
         color: var(--ink);
     }
 }
