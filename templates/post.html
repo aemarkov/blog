@@ -1,10 +1,47 @@
 {% extends "base.html" %}
 
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock title %}
+{% block description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock description %}
+
+{% block head %}
+{% if page.extra.math %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="/js/math.js"></script>
+{% endif %}
+{% endblock head %}
 
 {% block content %}
-<article class="post">
-    <h1>{{ page.title }}</h1>
-    {{<post_meta post={page}/>}}
-    {{ page.content | safe }}
+<article class="article-layout">
+    <header class="article-head">
+        {{<field_mark permalink={page.permalink}/>}}
+        <h1 class="article-head__title">{{ page.title }}</h1>
+        {% if page.description %}<p class="article-head__desc">{{ page.description }}</p>{% endif %}
+        <div class="article-head__meta">
+            {{<article_meta post={page}/>}}
+        </div>
+    </header>
+
+    <aside class="article-toc">
+        {% if page.toc %}{{<toc items={page.toc}/>}}{% endif %}
+    </aside>
+
+    <div class="article-main">
+        {% if page.toc %}
+        <details class="toc-mobile">
+            <summary class="label toc-mobile__summary">Содержание</summary>
+            {{<toc items={page.toc}/>}}
+        </details>
+        {% endif %}
+        <div class="prose">{{ page.content | safe }}</div>
+    </div>
 </article>
+
+{% set related = [] %}
+{% if page.extra.related %}{% set related = page.extra.related %}{% endif %}
+{{<note_links paths={related}/>}}
 {% endblock content %}
+
+{% block scripts %}
+{% if page.toc %}<script defer src="/js/toc.js"></script>{% endif %}
+{% endblock scripts %}

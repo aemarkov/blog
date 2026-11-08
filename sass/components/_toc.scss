@@ -1,0 +1,101 @@
+// Table of contents with CSS-counter numbering ("1", "2.1") that mirrors the numbering of .prose headings.
+.toc {
+    &__label {
+        display: block;
+        margin-bottom: var(--space-3);
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        // Only the top-level list carries the vertical rule and starts the counter
+        .toc > & {
+            counter-reset: toc-h2;
+            border-left: var(--hairline) solid var(--rule-strong);
+        }
+
+        > li {
+            counter-increment: toc-h2;
+            counter-reset: toc-h3;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 4px 0 4px var(--space-3);
+        margin-left: -1px;
+        border-left: var(--marker) solid transparent;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--ink-muted);
+        text-decoration: none;
+        transition: color 0.12s, border-color 0.12s;
+
+        &::before {
+            content: counter(toc-h2);
+            margin-right: 6px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+        }
+
+        &:hover {
+            color: var(--ink);
+        }
+
+        &[aria-current="location"] {
+            color: var(--accent);
+            border-left-color: var(--accent);
+            background: var(--accent-soft);
+        }
+    }
+
+    // second level
+    &__list &__list > li {
+        counter-increment: toc-h3;
+    }
+
+    &__list &__list &__link {
+        padding-left: 26px;
+        font-size: 13px;
+
+        &::before {
+            content: counter(toc-h2) "." counter(toc-h3);
+        }
+    }
+}
+
+// Collapsible variant shown instead of the sidebar on phones
+.toc-mobile {
+    display: none;
+    margin-bottom: var(--space-5);
+    border-top: var(--hairline) solid var(--rule);
+    border-bottom: var(--hairline) solid var(--rule);
+
+    &__summary {
+        display: flex;
+        justify-content: space-between;
+        padding: var(--space-3) 0;
+        cursor: pointer;
+        list-style: none;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            content: "+";
+            font-family: var(--font-mono);
+            color: var(--ink-muted);
+        }
+    }
+
+    &[open] > &__summary::after {
+        content: "−";
+    }
+
+    .toc {
+        padding-bottom: var(--space-3);
+    }
+}

@@ -1,0 +1,75 @@
+@use "../abstracts/breakpoints" as bp;
+
+.feed {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.feed-item {
+    padding: var(--space-5) 0;
+    border-bottom: var(--hairline) solid var(--rule);
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    .field-mark {
+        display: flex;
+        margin-bottom: 6px;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: var(--font-serif);
+        font-size: 22px;
+        line-height: 29px;
+        font-weight: 600;
+        font-variation-settings: "opsz" 24;
+        letter-spacing: -0.005em;
+
+        @include bp.mobile {
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+        a {
+            color: var(--ink);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--accent);
+            }
+        }
+    }
+
+    &__desc {
+        margin: var(--space-2) 0 0;
+        max-width: 64ch;
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    &__cover {
+        margin: var(--space-3) 0 0;
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border: var(--hairline) solid var(--rule);
+        }
+    }
+
+    &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-2) var(--space-3);
+        margin-top: var(--space-3);
+    }
+}
+
+.feed-empty {
+    @extend .aside;
+}

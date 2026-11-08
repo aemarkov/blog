@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 
+{% block title %}Темы — {{ config.title }}{% endblock title %}
+
 {% block content %}
-<h1>Все {{ taxonomy.name | lower }}</h1>
-<ul>
+<header class="page-head">
+    <h1 class="page-head__title">Все темы</h1>
+</header>
+{% if terms | length > 0 %}
+<ul class="tag-list">
     {% for term in terms %}
-        <li>
-            <a href="{{ term.permalink | safe }}">{{ term.name }}</a>
-            <span>({{ term.page_count }})</span>
-        </li>
+    <li><a class="tag" href="{{ term.permalink | safe }}">{{ term.name }}<span class="tag__count">{{ term.page_count }}</span></a></li>
     {% endfor %}
-    {% if terms | length == 0 %}
-        <li>Нет терминов</li>
-    {% endif %}
 </ul>
+{% else %}
+<p class="feed-empty">Тем пока нет.</p>
+{% endif %}
 {% endblock content %}

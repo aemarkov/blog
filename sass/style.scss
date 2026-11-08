@@ -1,46 +1,29 @@
-@import "_reset";
-@import "_settings";
-@import "_fonts";
-@import "_typography";
-@import "_nav";
-@import "_posts";
-@import "_about";
+@use "abstracts/tokens";
+// Entry point. Order: abstracts → base → layout → components → pages.
+@use "base/reset";
+@use "base/fonts";
+@use "base/typography";
 
-body {
-    background-color: var(--background-color);
-    color: var(--primary-font-color);
-    overflow-wrap: anywhere;
-    word-break: break-word;
-}
+@use "layout/page";
+@use "layout/header";
+@use "layout/footer";
 
-.container {
-    width: 100%;
-    max-width: $line-length;
-    margin-left: auto;
-    margin-right: auto;
-}
+@use "components/tags";
+@use "components/field-mark";
+@use "components/feed";
+@use "components/intro";
+@use "components/sidebar";
+@use "components/toc";
+@use "components/prose";
+@use "components/callout";
+@use "components/code";
+@use "components/figure";
+@use "components/table";
+@use "components/equation";
+@use "components/note-links";
+@use "components/contacts";
+@use "components/experience";
 
-main {
-    padding: 0 1rem 0 1rem;
-}
-
-// Images
-img, picture {
-    max-width: 100%;
-    max-height: 50rem;
-    display: block;
-}
-
-figure {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    margin: var(--paragraph-spacing) 0;
-}
-
-figcaption {
-    @include pt-sans-regular;
-    color: var(--secondary-font-color);
-    text-align: center;
-    margin-top: var(--intra-spacing);
-}
+@use "pages/home";
+@use "pages/article";
+@use "pages/about";

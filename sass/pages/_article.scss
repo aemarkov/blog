@@ -1,0 +1,100 @@
+@use "../abstracts/breakpoints" as bp;
+
+// Same grid as the home page: text column left, contents right.
+.article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--sidebar-width);
+    column-gap: var(--toc-gap);
+    align-items: start;
+
+    @include bp.mobile {
+        grid-template-columns: minmax(0, 1fr);
+        column-gap: 0;
+    }
+}
+
+.article-head {
+    grid-column: 1;
+    grid-row: 1;
+    padding: calc(var(--content-top) - 28px) 0 var(--space-6); // kicker hangs in the top margin, title lands on the content line
+    border-bottom: var(--hairline) solid var(--rule);
+
+    @include bp.mobile {
+        padding-bottom: var(--space-5);
+    }
+
+    .field-mark {
+        display: flex;
+        margin-bottom: var(--space-3);
+    }
+
+    &__title {
+        margin: 0;
+        max-width: 24em;
+        font-family: var(--font-serif);
+        font-size: 40px;
+        line-height: 46px;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        font-variation-settings: "opsz" 48;
+        text-wrap: balance;
+
+        @include bp.mobile {
+            font-size: 30px;
+            line-height: 36px;
+        }
+    }
+
+    &__desc {
+        margin: var(--space-4) 0 0;
+        max-width: 40em;
+        font-size: 19px;
+        line-height: 31px;
+        color: var(--ink-muted);
+
+        @include bp.mobile {
+            font-size: 17px;
+            line-height: 28px;
+        }
+    }
+
+    &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-2) var(--space-4);
+        margin-top: var(--space-5);
+    }
+}
+
+.article-main {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+    padding-top: var(--space-6);
+
+    @include bp.mobile {
+        padding-top: var(--space-5);
+    }
+}
+
+.article-toc {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+    position: sticky;
+    top: var(--space-5);
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+    padding-top: calc(var(--content-top) + 5px); // label caps on the title caps
+
+    @include bp.mobile {
+        display: none;
+    }
+}
+
+@include bp.mobile {
+    .toc-mobile {
+        display: block;
+    }
+}

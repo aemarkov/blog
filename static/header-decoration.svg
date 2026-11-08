@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 888 216" width="888" height="216" fill="none">
+  <defs>
+    <linearGradient id="hd-die" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#567369" stop-opacity=".04"/><stop offset="1" stop-color="#567369" stop-opacity=".1"/></linearGradient>
+  </defs>
+  <g stroke="#567369" stroke-linecap="round" stroke-linejoin="round">
+    <!-- faint background traces -->
+    <path d="M77 106L126.5 106" stroke-opacity=".1" stroke-width="1.5"/>
+    <path d="M170 78L210 78" stroke-opacity=".04" stroke-width="1.5"/>
+    <path d="M212 85.25L270 85.25" stroke-opacity=".1" stroke-width="1.5"/>
+    <path d="M185 124.5L230.75 124.5" stroke-opacity=".1" stroke-width="1.5"/>
+    <path d="M518 85.25L530.17 85.25A2 2 0 0 0 531.59 84.66L565.66 50.59A2 2 0 0 1 567.08 50L665 50" stroke-opacity=".13" stroke-width="1.5"/>
+    <path d="M568.25 141.25L625 84.5" stroke-opacity=".1" stroke-width="1.5"/>
+    <path d="M625 84.5L659.17 84.5A2 2 0 0 0 660.59 83.91L744.5 0" stroke-opacity=".14" stroke-width="1.5"/>
+    <path d="M735 62.5L777 62.5" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M829 30L859 0" stroke-opacity=".04" stroke-width="1.5"/>
+    <circle cx="72.5" cy="106" r="3.75" stroke-opacity=".1" stroke-width="1.75"/>
+    <circle cx="165" cy="78" r="4.5" stroke-opacity=".12" stroke-width="1.75"/>
+    <circle cx="515" cy="50" r="4.75" stroke-opacity=".22" stroke-width="2"/>
+    <circle cx="621" cy="50" r="4.75" stroke-opacity=".16" stroke-width="2"/>
+    <!-- main traces -->
+    <path d="M135.5 106L242.17 106A2 2 0 0 0 243.59 105.41L296.91 52.09A2 2 0 0 1 298.33 51.5L478.17 51.5A2 2 0 0 1 479.59 52.09L509.8 82.3" stroke-opacity=".5" stroke-width="2"/>
+    <path d="M214 141.25L269.41 85.84A2 2 0 0 1 270.83 85.25L508.5 85.25" stroke-opacity=".22" stroke-width="1.5"/>
+    <path d="M589 84.5L624.17 84.5A2 2 0 0 0 625.59 83.91L711 -1.5" stroke-opacity=".5" stroke-width="2"/>
+    <path d="M271 141.25L296.41 115.84A2 2 0 0 1 297.83 115.25L670.17 115.25A2 2 0 0 0 671.59 114.66L751.66 34.59A2 2 0 0 1 753.08 34L820.5 34" stroke-opacity=".5" stroke-width="2"/>
+    <path d="M649.5 141.25L677.8 169.55" stroke-opacity=".5" stroke-width="2"/>
+    <circle cx="131" cy="106" r="4.5" stroke-opacity=".6" stroke-width="2.5"/>
+    <circle cx="513" cy="85.25" r="4.5" stroke-opacity=".6" stroke-width="2.5"/>
+    <circle cx="584.5" cy="84.5" r="4.5" stroke-opacity=".5" stroke-width="2.5"/>
+    <circle cx="825" cy="34" r="4.5" stroke-opacity=".5" stroke-width="2.5"/>
+    <circle cx="681" cy="172.5" r="4.5" stroke-opacity=".52" stroke-width="2.5"/>
+  </g>
+  <circle cx="681.5" cy="50.5" r="2" fill="#567369" fill-opacity=".35"/>
+  <g stroke="#567369">
+    <path d="M771 80V96M771 146V162M748 102.5H764M815 102.5H831M780.25 80V96M780.25 146V162M748 111.75H764M815 111.75H831M789.5 80V96M789.5 146V162M748 121H764M815 121H831M798.75 80V96M798.75 146V162M748 130.25H764M815 130.25H831M808 80V96M808 146V162M748 139.5H764M815 139.5H831" stroke-opacity=".55" stroke-width="3"/>
+    <rect x="762" y="93.5" width="55" height="55" rx="6" fill="#fdfdfb" stroke-opacity=".72" stroke-width="3.5"/>
+    <rect x="771" y="102.5" width="37" height="37" rx="3" fill="url(#hd-die)" stroke-opacity=".6" stroke-width="3"/>
+  </g>
+</svg>

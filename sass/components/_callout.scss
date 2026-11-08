@@ -1,0 +1,59 @@
+// Callout: note | observation | tip | warning. The marker shape differs, not only colour.
+.callout {
+    padding: var(--space-3) var(--space-4) var(--space-4);
+    background: var(--surface);
+    border: var(--hairline) solid var(--rule);
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    line-height: 24px;
+
+    &__kind {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 4px;
+        color: var(--ink);
+
+        &::before {
+            content: "";
+            flex: none;
+            width: 7px;
+            height: 7px;
+            background: var(--accent);
+        }
+    }
+
+    &--warning &__kind::before {
+        width: 6px;
+        height: 6px;
+        background: var(--ink);
+        transform: rotate(45deg);
+    }
+
+    &--observation &__kind::before {
+        width: 5px;
+        height: 5px;
+        background: transparent;
+        border: 1.5px solid var(--accent);
+        border-radius: 50%;
+    }
+
+    &--tip &__kind::before {
+        width: 5px;
+        height: 5px;
+        background: transparent;
+        border: 1.5px solid var(--accent);
+    }
+
+    &__body > :first-child {
+        margin-top: 0;
+    }
+
+    &__body > :last-child {
+        margin-bottom: 0;
+    }
+
+    &__body p {
+        margin: 0 0 var(--space-2);
+    }
+}

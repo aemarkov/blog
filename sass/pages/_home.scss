@@ -1,0 +1,21 @@
+@use "../abstracts/breakpoints" as bp;
+
+// Main column (intro + feed) and side column start together at the content line.
+.home {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--sidebar-width);
+    gap: var(--toc-gap);
+
+    @include bp.mobile {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-7);
+    }
+
+    > * {
+        min-width: 0;
+    }
+
+    &__feed-head {
+        margin: var(--space-6) 0 var(--space-2);
+    }
+}

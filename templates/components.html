@@ -1,0 +1,183 @@
+{# ---------- tags ---------- #}
+
+{# Chips for a page's taxonomy terms (linked) or for plain strings (linked = false). #}
+{% component tag_list(tags, linked = true) %}
+    <ul class="tag-list" aria-label="Теги">
+        {% for tag in tags %}
+        <li>
+            {% if linked %}
+            <a class="tag" href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag }}</a>
+            {% else %}
+            <span class="tag">{{ tag }}</span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+{% endcomponent tag_list %}
+
+{# ---------- feed ---------- #}
+
+{# Article number by date order of the root section: oldest = 001, zero-padded to three digits. #}
+{% component field_mark(permalink) %}
+    {% set_global n = 0 %}
+    {% set root = get_section(path="_index.md") %}
+    {% for p in root.pages %}
+        {% if p.permalink == permalink %}{% set_global n = loop.length - loop.index0 %}{% endif %}
+    {% endfor %}
+    <span class="field-mark">Заметка / № <b>{% if n < 10 %}00{% elif n < 100 %}0{% endif %}{{ n }}</b></span>
+{% endcomponent field_mark %}
+
+{% component article_meta(post) %}
+    <time class="meta" datetime="{{ post.date }}">{{ post.date }}</time>
+    {% if post.taxonomies.tags %}
+    {{<tag_list tags={post.taxonomies.tags}/>}}
+    {% endif %}
+{% endcomponent article_meta %}
+
+{% component article_item(post) %}
+    <li class="feed-item">
+        {{<field_mark permalink={post.permalink}/>}}
+        <h2 class="feed-item__title"><a href="{{ post.permalink | safe }}">{{ post.title }}</a></h2>
+        {% if post.description %}
+        <p class="feed-item__desc">{{ post.description }}</p>
+        {% endif %}
+        {% if post.extra.cover %}
+        <figure class="feed-item__cover"><img src="{{ post.extra.cover | safe }}" alt="" loading="lazy"></figure>
+        {% endif %}
+        <div class="feed-item__meta">
+            {{<article_meta post={post}/>}}
+        </div>
+    </li>
+{% endcomponent article_item %}
+
+{# ---------- article ---------- #}
+
+{# Two-level table of contents built from page.toc; numbering comes from CSS counters. #}
+{% component toc(items) %}
+    <nav class="toc" aria-label="Содержание">
+        <span class="label toc__label">Содержание</span>
+        <ol class="toc__list">
+            {% for h in items %}
+            <li>
+                <a class="toc__link" href="#{{ h.id }}">{{ h.title }}</a>
+                {% if h.children %}
+                <ol class="toc__list">
+                    {% for c in h.children %}
+                    <li><a class="toc__link" href="#{{ c.id }}">{{ c.title }}</a></li>
+                    {% endfor %}
+                </ol>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ol>
+    </nav>
+{% endcomponent toc %}
+
+{# Placeholder: related notes come from `extra.related` (list of page paths); backlinks are not supported by Zola yet. #}
+{% component note_links(paths) %}
+    <div class="note-links">
+        <section class="note-links__col" aria-label="Связанные заметки">
+            <h2 class="label note-links__head">Связанные заметки <span class="note-links__hint">выбраны автором</span></h2>
+            {% if paths | length > 0 %}
+            <ul>
+                {% for path in paths %}
+                {% set p = get_page(path=path) %}
+                <li><a href="{{ p.permalink | safe }}">{{ p.title }}</a><span class="meta">{{ p.date }}</span></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="note-links__empty">Связанных заметок пока нет.</p>
+            {% endif %}
+        </section>
+        <section class="note-links__col note-links__col--back" aria-label="Обратные ссылки">
+            <h2 class="label note-links__head">Обратные ссылки <span class="note-links__hint">ссылаются: 0</span></h2>
+            {# TODO: backlinks — Zola has no native support; needs a build-time index or a data file. #}
+            <p class="note-links__empty">Сюда пока никто не ссылается.</p>
+        </section>
+    </div>
+{% endcomponent note_links %}
+
+{# ---------- article shortcodes (use from Markdown) ---------- #}
+
+{# {% <callout type="note|observation|tip|warning"> %}Markdown text{% </callout> %} #}
+{% component callout(type = "note") %}
+<aside class="callout callout--{{ type }}" role="note">
+<div class="label callout__kind">
+{% if type == "warning" %}Внимание{% elif type == "observation" %}Наблюдение{% elif type == "tip" %}Совет{% else %}Примечание{% endif %}
+</div>
+<div class="callout__body">{{ body | markdown | safe }}</div>
+</aside>
+{% endcomponent callout %}
+
+{# Image with optional numbered caption (body); `frame` draws a hairline border. #}
+{% component figure(src, alt = "", number = "", frame = false) %}
+<figure class="figure{% if frame %} figure--frame{% endif %}">
+<img src="{{ src | safe }}" alt="{{ alt }}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+{% if body or number %}
+<figcaption class="caption figure__caption">
+{% if number %}<b>Рис. {{ number }}</b>{% if body %} — {% endif %}{% endif %}{{ body | safe }}
+</figcaption>
+{% endif %}
+</figure>
+{% endcomponent figure %}
+
+{# Display equation. Needs `extra.math = true` in the page front matter to load KaTeX. #}
+{% component equation(tex, number = "", id = "") %}
+<div class="equation"{% if id %} id="{{ id }}"{% endif %}>
+<div class="equation__body" data-tex="{{ tex }}">{{ tex }}</div>
+{% if number %}<span class="caption equation__number">({{ number }})</span>{% endif %}
+</div>
+{% endcomponent equation %}
+
+{# ---------- about ---------- #}
+
+{% component contact_list(links, footer_only = false) %}
+    <ul class="contacts" aria-label="Контакты">
+        {% for l in links %}
+        {% if not footer_only or l.footer %}
+        <li>
+            {% if l.icon %}
+            <img class="contacts__icon" src="{{ l.icon }}" alt="" width="16" height="16">
+            <span class="visually-hidden">{{ l.label }}</span>
+            {% else %}
+            <span class="contacts__label">{{ l.label }}</span>
+            {% endif %}
+            <a href="{{ l.href }}">{{ l.handle }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+{% endcomponent contact_list %}
+
+{% component skill_group(group) %}
+    <div class="skill-group">
+        <h3 class="skill-group__title">{{ group.title }}</h3>
+        <ul class="skill-group__list" aria-label="{{ group.title }}">
+            {% for t in group.tags %}<li>{{ t }}</li>{% endfor %}
+        </ul>
+    </div>
+{% endcomponent skill_group %}
+
+{# Experience / education entries from a section, newest (highest weight) first. #}
+{% component job_list(list) %}
+    <ol class="jobs">
+        {% for item in list.pages | reverse %}
+        <li class="job">
+            {% if item.extra.org_icon %}
+            <img class="job__logo" src="/companies/{{ item.extra.org_icon }}" alt="" width="56" height="56">
+            {% endif %}
+            <h3 class="job__title">{{ item.extra.title }}</h3>
+            <p class="job__company">{{ item.extra.details }}{% if item.extra.team %} · {{ item.extra.team }}{% endif %}</p>
+            <p class="job__period">
+                {{ item.extra.from }}{% if item.extra.to %} — {{ item.extra.to }}{% endif %}{% if item.extra.duration %} · {{ item.extra.duration }}{% endif %}
+            </p>
+            {% if item.content | trim %}
+            <div class="job__summary">{{ item.content | safe }}</div>
+            {% endif %}
+            {% if item.extra.tags %}
+            {{<tag_list tags={item.extra.tags} linked={false}/>}}
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ol>
+{% endcomponent job_list %}

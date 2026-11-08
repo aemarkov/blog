@@ -1,0 +1,10 @@
+<footer class="site-footer">
+    <div class="page site-footer__inner">
+        <img class="site-footer__art" src="/footer-art.svg" alt="" width="240" height="48">
+        <p class="site-footer__phrase">To boldly go where no man has slopped before</p>
+        <div class="site-footer__side">
+            {{<contact_list links={config.extra.contacts} footer_only={true}/>}}
+            <span class="meta">© {{ now() | date(format="%Y") }} {{ config.extra.author }}</span>
+        </div>
+    </div>
+</footer>

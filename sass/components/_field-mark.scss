@@ -1,0 +1,23 @@
+// Accent kicker: "ЗАМЕТКА / № 024"
+.field-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+
+    &::before {
+        content: "";
+        width: 14px;
+        height: var(--hairline);
+        background: var(--accent);
+    }
+
+    b {
+        font-weight: 500;
+    }
+}

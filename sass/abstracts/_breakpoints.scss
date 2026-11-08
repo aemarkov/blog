@@ -1,0 +1,8 @@
+// Single breakpoint: everything below it uses the phone layout.
+$mobile: 880px;
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}

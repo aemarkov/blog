@@ -1,6 +1,8 @@
 # The URL the site will be built for
 base_url = "https://aemarkov.me"
 
+title = "Записки охотника за сегфолтами"
+description = "Заметки о программировании, инженерии и не только"
 default_language = "en"
 
 # Whether to automatically compile all Sass files in the sass directory
@@ -15,16 +17,50 @@ taxonomies = [
 ]
 
 [markdown]
-# Syntax highlighting; theme can be customised via `theme` in this table
+insert_anchor_links = "right"
+# Syntax highlighting uses the design palette (highlight/segfault.json)
 [markdown.highlighting]
-theme = "catppuccin-mocha"
+theme = "segfault"
+extra_themes = ["highlight/segfault.json"]
+data_attr_position = "pre"
 
 [extra]
 # Put all your custom variables here
+author = "Алексей Марков"
+
+# Contact links: shown on the About page; those flagged `footer` also in the site footer
+[[extra.contacts]]
+label = "GitHub"
+handle = "github.com/aemarkov"
+href = "https://github.com/aemarkov"
+icon = "/icons/icons8-github-32.png"
+footer = true
+
+[[extra.contacts]]
+label = "LinkedIn"
+handle = "in/markov-alexey"
+href = "https://www.linkedin.com/in/markov-alexey/"
+icon = "/icons/icons8-linkedin-32.png"
+
+[[extra.contacts]]
+label = "Telegram"
+handle = "@markovalex95"
+href = "https://t.me/markovalex95"
+icon = "/icons/icons8-telegram-32.png"
+footer = true
+
+[[extra.contacts]]
+label = "Почта"
+handle = "markovalex95@gmail.com"
+href = "mailto:markovalex95@gmail.com"
 
 [slugify]
 taxonomies = "off"
 
 [languages.ru]
+taxonomies = [
+    { name = "tags", feed = false }
+]
+
 [languages.ru.translations]
 [translations]

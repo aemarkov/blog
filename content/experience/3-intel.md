@@ -6,6 +6,7 @@ details = "Intel Corporation"
 org_icon = "intel.jpg"
 from = "Feb 2019"
 to = "Aug 2021"
+tags = ["C", "Python", "Real-Time Systems", "Low-Level Programming", "Linux", "Embedded Linux", "Multithreading", "Unit Testing", "TSN", "PTP", "Firmware Update", "BIOS Configuration", "Debugging", "PID Control"]
 duration = "2 yrs 7 mos"
 +++
 
@@ -16,5 +17,3 @@ duration = "2 yrs 7 mos"
 - Mentored interns and junior developers on Cache Configurator and RT Readiness Checker; supervised student project during Intel Summer Internship program.
 - Promoted adoption of Python type hints across the team, reducing defects; delivered internal training session on the topic.
 - Built and validated low-level hardware samples for TSN and Time Aware GPIO (TGPIO), identifying kernel driver issues and proposing fixes.
-
-Technologies: C, Python, Real-Time Systems, Low-Level Programming, Linux, Embedded Linux, Multithreading, Unit Testing, TSN, PTP,  Firmware Update, BIOS Configuration, Debugging, PID Control

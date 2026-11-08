@@ -1,10 +1,42 @@
 {% extends "base.html" %}
 
-
 {% block content %}
-<div class="posts">
-    {% for post in section.pages %}
-        {{<post_item post={post}/>}}
-    {% endfor %}
+<div class="home">
+    <div>
+        <section class="intro">
+            <p class="intro__text">{{ section.extra.intro }}</p>
+            {% if section.extra.intro_note %}
+            <p class="intro__note">{{ section.extra.intro_note }}</p>
+            {% endif %}
+        </section>
+
+        <section aria-label="Статьи">
+            <h2 class="col-head home__feed-head">Статьи</h2>
+            {% if section.pages | length > 0 %}
+            <ol class="feed">
+                {% for post in section.pages %}
+                {{<article_item post={post}/>}}
+                {% endfor %}
+            </ol>
+            {% else %}
+            <p class="feed-empty">Здесь пока ничего интересного.</p>
+            {% endif %}
+        </section>
+    </div>
+
+    <aside class="sidebar">
+        {% set tags = get_taxonomy(kind="tags") %}
+        {% if tags.items | length > 0 %}
+        <section class="sidebar__section">
+            <h2 class="col-head">Темы</h2>
+            <ul class="sidebar__list">
+                {% for term in tags.items | sort(attribute="page_count") | reverse %}
+                <li><a href="{{ term.permalink | safe }}"><span>{{ term.name }}</span><span class="meta">{{ term.page_count }}</span></a></li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+        <img src="/side-decoration.svg"/>
+    </aside>
 </div>
 {% endblock content %}

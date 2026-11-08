@@ -1,0 +1,119 @@
+@use "../abstracts/breakpoints" as bp;
+
+.profile {
+    display: grid;
+    grid-template-columns: 136px minmax(0, 1fr);
+    gap: var(--space-5);
+    align-items: start;
+    padding: var(--content-top) 0 var(--space-6);
+    border-bottom: var(--hairline) solid var(--rule);
+
+    @include bp.mobile {
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: var(--space-4);
+    }
+
+    &__photo {
+        display: block;
+        width: 136px;
+        height: 136px;
+        object-fit: cover;
+        filter: grayscale(0.25);
+        border: var(--hairline) solid var(--rule);
+        background: var(--surface);
+
+        @include bp.mobile {
+            width: 88px;
+            height: 88px;
+        }
+    }
+
+    &__name {
+        margin: 0;
+        font-family: var(--font-serif);
+        font-size: 32px;
+        line-height: 38px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+
+        @include bp.mobile {
+            font-size: 26px;
+            line-height: 32px;
+        }
+    }
+
+    &__role {
+        margin: 4px 0 0;
+        font-size: 14px;
+        line-height: 21px;
+        color: var(--ink-muted);
+    }
+
+    &__summary {
+        margin: var(--space-3) 0 var(--space-4);
+        max-width: 38em;
+        font-size: 17px;
+        line-height: 28px;
+    }
+}
+
+// Section = label column + content column
+.about-section {
+    display: grid;
+    grid-template-columns: var(--toc-width) minmax(0, 1fr);
+    gap: var(--toc-gap);
+    padding: var(--space-6) 0;
+    border-bottom: var(--hairline) solid var(--rule);
+
+    @include bp.mobile {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-4);
+    }
+
+    &__label {
+        margin: 0;
+        padding-top: 4px;
+        color: var(--ink);
+    }
+}
+
+// Skills: bold group name, then the skills as one line of text joined by " · "
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.skill-group {
+    &__title {
+        margin: 0;
+        font-size: 15px;
+        line-height: 22px;
+        font-weight: 600;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 2px 0 0;
+        padding: 0;
+        font-size: 14px;
+        line-height: 21px;
+        color: var(--ink-muted);
+
+        li {
+            display: inline;
+            white-space: nowrap;
+        }
+
+        li + li::before {
+            content: " · ";
+            white-space: normal;
+        }
+    }
+}
+
+.jobs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

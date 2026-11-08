@@ -1,0 +1,44 @@
+@use "../abstracts/breakpoints" as bp;
+
+// Fenced code blocks. Zola emits <pre data-lang="…"> with class-based highlighting (see syntax tokens below).
+.prose pre {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    padding: var(--space-4) 64px var(--space-4) var(--space-4);
+    background: var(--surface);
+    border: var(--hairline) solid var(--rule);
+    border-radius: var(--radius-md);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--ink);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    tab-size: 4;
+
+    @include bp.mobile {
+        padding: 26px var(--space-3) var(--space-3);
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    &[data-lang]::before {
+        content: attr(data-lang);
+        position: absolute;
+        top: 6px;
+        right: 10px;
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 0.04em;
+        color: var(--ink-muted);
+        user-select: none;
+    }
+
+    code {
+        font: inherit;
+        background: none;
+        border: 0;
+        padding: 0;
+    }
+}

@@ -1,0 +1,34 @@
+// Tag chip: <a class="tag"> for links, <span class="tag"> for static labels.
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 7px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--ink);
+    white-space: nowrap;
+    text-decoration: none;
+    border: var(--hairline) solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+    transition: color 0.12s, border-color 0.12s;
+
+    &__count {
+        margin-left: 6px;
+        color: var(--ink-muted);
+    }
+}
+
+a.tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}

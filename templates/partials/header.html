@@ -1,0 +1,22 @@
+{# Active nav item: About for /about…, otherwise the article feed. #}
+{% set on_about = "/about" in current_path %}
+{% set prefix = "" %}
+{% if lang != config.default_language %}{% set prefix = "/" ~ lang %}{% endif %}
+<header class="site-header">
+
+    <div class="page site-header__inner">
+        <a class="brand" href="{{ prefix }}/">
+            <svg class="brand__logo" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M6 6h5l8 10-8 10H6l8-10z M18 21h9v5h-9z" />
+            </svg>
+            <span class="brand__name">{{ config.title }}</span>
+            <span class="brand__by">{{ config.extra.author }}</span>
+        </a>
+        <nav class="site-nav" aria-label="Основное меню">
+            <a class="site-nav__link" href="{{ prefix }}/"
+                {% if not on_about %}aria-current="page"{% endif %}>Статьи</a>
+            <a class="site-nav__link" href="{{ prefix }}/about/"
+                {% if on_about %}aria-current="page"{% endif %}>Обо мне</a>
+        </nav>
+    </div>
+</header>

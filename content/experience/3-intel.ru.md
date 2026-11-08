@@ -4,9 +4,10 @@ weight = 3
 title = "Software Development Engineer"
 details = "Intel Corporation"
 org_icon = "intel.jpg"
-from = "Feb 2019"
-to = "Aug 2021"
-duration = "2 yrs 7 mos"
+from = "Февраль 2019"
+to = "Август 2021"
+tags = ["C", "Python", "системы реального времени", "низкоуровневое программирование", "Linux", "Embedded Linux", "многопоточность", "unit-тестирование", "TSN", "PTP", "конфигурация BIOS", "отладка", "PID-регулятор"]
+duration = "2 г. 7 мес."
 +++
 
 - Разрабатывал компоненты Intel Time Coordinated Computing Tools — SDK для поддержки аппаратных функций под реальные и низкозадержанные промышленные приложения на Linux
@@ -16,5 +17,3 @@ duration = "2 yrs 7 mos"
 - Менторил стажёров и младших разработчиков по Cache Configurator и RT Readiness Checker; курировал студентческий проект в рамках Intel Summer Internship
 - Внедрил использование Python type hints в команде, уменьшив число ошибок; провёл внутреннее обучение
 - Разрабатывал и тестировал низкоуровневые аппаратные демо для TSN и Time Aware GPIO (TGPIO), выявлял проблемы в драйверах ядра и предлагал исправления
-
-Технологии: C, Python, системы реального времени, низкоуровневое программирование, Linux, Embedded Linux, многопоточность, unit-тестирование, TSN, PTP,  конфигурация BIOS, отладка, PID-регулятор.
