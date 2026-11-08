@@ -77,7 +77,7 @@
 {% component note_links(paths) %}
     <div class="note-links">
         <section class="note-links__col" aria-label="Связанные заметки">
-            <h2 class="label note-links__head">Связанные заметки <span class="note-links__hint">выбраны автором</span></h2>
+            <h2 class="label note-links__head">Связанные заметки</h2>
             {% if paths | length > 0 %}
             <ul>
                 {% for path in paths %}
@@ -90,7 +90,7 @@
             {% endif %}
         </section>
         <section class="note-links__col note-links__col--back" aria-label="Обратные ссылки">
-            <h2 class="label note-links__head">Обратные ссылки <span class="note-links__hint">ссылаются: 0</span></h2>
+            <h2 class="label note-links__head">Обратные ссылки</h2>
             {# TODO: backlinks — Zola has no native support; needs a build-time index or a data file. #}
             <p class="note-links__empty">Сюда пока никто не ссылается.</p>
         </section>
