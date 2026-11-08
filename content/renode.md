@@ -18,6 +18,28 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis ex id l
 
 ## Title
 
+Lists:
+- List
+- List
+  - Nested lists
+    - More nested lists
+      - Liiiiists
+
+Немного таблиц вам в ленту:
+|Foo|Bar|
+|---|---|
+|1  |2  |
+|3  |4  |
+
+Подсветка синтаксиса
+```c++
+int main()
+{
+    // Calculate Pupa's salary
+    auto pupa_salary = calc_salary_for(lupa);
+};
+```
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis ex id leo euismod ultrices. Suspendisse tempus ex enim, quis bibendum nisl scelerisque consequat. Ut in hendrerit augue, non semper metus. Sed in odio quis sem porta aliquam in eu turpis. Morbi porta justo nulla. Nunc facilisis vehicula est ac sagittis. Praesent placerat massa a magna fermentum, in facilisis purus auctor. Curabitur pellentesque sagittis mollis. Vestibulum a iaculis augue. Vivamus congue porttitor augue. Sed porta, lorem efficitur iaculis hendrerit, tortor velit auctor lacus, sed faucibus elit dolor at diam. Phasellus id auctor massa.
 
 ## More title

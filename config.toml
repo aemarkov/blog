@@ -19,10 +19,9 @@ taxonomies = [
 [markdown]
 insert_anchor_links = "right"
 # Syntax highlighting uses the design palette (highlight/segfault.json)
+
 [markdown.highlighting]
-theme = "segfault"
-extra_themes = ["highlight/segfault.json"]
-data_attr_position = "pre"
+theme = "github-light"
 
 [extra]
 # Put all your custom variables here
