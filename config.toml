@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://aemarkov.me"
+base_url = "https://markov.page"
 
 title = "Записки охотника за сегфолтами"
 description = "Заметки о программировании, инженерии и не только"
