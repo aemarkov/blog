@@ -3,18 +3,24 @@
 {% block title %}{{ term.name }} — {{ config.title }}{% endblock title %}
 
 {% block content %}
-<header class="page-head">
-    <h1 class="page-head__title">{{ term.name }}</h1>
-    <p class="page-head__lead">Статей по теме: {{ term.pages | length }}</p>
-</header>
+<div class="two-col">
+    <div>
+        <header class="page-head">
+            <h1 class="page-head__title">{{ term.name }}</h1>
+            <p class="page-head__lead">Статей по теме: {{ term.pages | length }}</p>
+        </header>
 
-{% if term.pages | length > 0 %}
-<ol class="feed">
-    {% for post in term.pages %}
-    {{<article_item post={post}/>}}
-    {% endfor %}
-</ol>
-{% else %}
-<p class="feed-empty">Нет записей</p>
-{% endif %}
+        {% if term.pages | length > 0 %}
+        <ol class="feed">
+            {% for post in term.pages %}
+            {{<article_item post={post}/>}}
+            {% endfor %}
+        </ol>
+        {% else %}
+        <p class="feed-empty">Нет записей</p>
+        {% endif %}
+    </div>
+
+    {% include "partials/sidebar.html" %}
+</div>
 {% endblock content %}

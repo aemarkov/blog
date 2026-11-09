@@ -1,0 +1,14 @@
+<aside class="sidebar">
+    {% set tags = get_taxonomy(kind="tags") %}
+    {% if tags.items | length > 0 %}
+    <section class="sidebar__section">
+        <h2 class="col-head">Темы</h2>
+        <ul class="sidebar__list">
+            {% for term in tags.items | sort(attribute="page_count") | reverse %}
+            <li><a href="{{ term.permalink | safe }}"><span>{{ term.name }}</span><span class="meta">{{ term.page_count }}</span></a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+    <img class="sidebar__decoration" src="/side-decoration.svg" alt="" aria-hidden="true">
+</aside>
