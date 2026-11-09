@@ -1,0 +1,14 @@
+@use "breakpoints" as bp;
+
+// Main column + side column. The single source of the two-column geometry:
+// the main column is `1fr`, which resolves to --main-width at full page width.
+@mixin two-col {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--sidebar-width);
+    column-gap: var(--toc-gap);
+
+    @include bp.mobile {
+        grid-template-columns: minmax(0, 1fr);
+        column-gap: 0;
+    }
+}

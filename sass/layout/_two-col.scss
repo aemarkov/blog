@@ -1,0 +1,15 @@
+@use "../abstracts/breakpoints" as bp;
+@use "../abstracts/layout";
+
+// Page with a side column (home, tag pages): both columns start at the content line.
+.two-col {
+    @include layout.two-col;
+
+    @include bp.mobile {
+        row-gap: var(--space-7);
+    }
+
+    > * {
+        min-width: 0;
+    }
+}

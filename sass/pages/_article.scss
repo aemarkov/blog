@@ -1,16 +1,10 @@
 @use "../abstracts/breakpoints" as bp;
+@use "../abstracts/layout";
 
 // Same grid as the home page: text column left, contents right.
 .article-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) var(--sidebar-width);
-    column-gap: var(--toc-gap);
+    @include layout.two-col;
     align-items: start;
-
-    @include bp.mobile {
-        grid-template-columns: minmax(0, 1fr);
-        column-gap: 0;
-    }
 }
 
 .article-head {
