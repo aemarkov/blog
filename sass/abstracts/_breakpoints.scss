@@ -1,7 +1,7 @@
 // Main breakpoint: everything below it uses the phone layout.
 $mobile: 880px;
 // Small phones: only for squeezing the header.
-$narrow: 400px;
+$narrow: 465px;
 
 @mixin mobile {
     @media (max-width: $mobile) {

@@ -146,7 +146,7 @@
 
         // The brand already links to the feed; drop the duplicate to free room for the title.
         &--feed {
-            @include bp.mobile {
+            @include bp.narrow {
                 display: none;
             }
         }
